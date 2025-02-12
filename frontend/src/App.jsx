@@ -10,11 +10,13 @@ import Order from './pages/Order'
 import Product from './pages/product'
 import Navbar from './component/Navbar'
 import Footer from './component/Footer'
+import SearchBar from './component/Search'
 
 function App() {
   return (
    <div className='px-4 sm:px-[5vw] md:px-[7vw] 1g:px-[9vw] '>
     <Navbar/>
+    <SearchBar/>
     <Routes>
       <Route path='/' element={<Home/>} / >
       <Route path='/about' element={<About/>} / >
@@ -23,7 +25,7 @@ function App() {
       <Route path='/contact' element={<Contact/>} / >
       <Route path='/placeorder' element={<Placeorder/>} / >
       <Route path='/order' element={<Order/>} / >
-      <Route path='/product' element={<Product/>} / >
+      <Route path='/products/:productId' element={<Product/>} / >
     </Routes>
     <Footer/>
       
