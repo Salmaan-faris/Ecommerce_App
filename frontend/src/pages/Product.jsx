@@ -8,7 +8,7 @@ function Product() {
 
   const {productId} = useParams()
   const [productData, setProductData] = useState(false)
-  const {products,currency}=useContext(Shopcontext)
+  const {products,currency, addToCart}=useContext(Shopcontext)
   const [imageData,setImageData] = useState('')
   const [size,setSize] = useState('')
 
@@ -17,7 +17,7 @@ function Product() {
       if(item._id === productId){
         setProductData(item)
         setImageData(item.image[0])
-        console.log(item);
+        // console.log(item);
                 
         return null;
         
@@ -68,7 +68,7 @@ function Product() {
               ))}
             </div>
            </div>
-           <button className="mt-4 py-3 px-8 bg-black text-white text-sm active:bg-gray-700 ">ADD TO CART</button>
+           <button onClick={()=>addToCart(productData._id,size)} className="mt-4 py-3 px-8 bg-black text-white text-sm active:bg-gray-700 ">ADD TO CART</button>
            <hr className='mt-4  sm:w-4/5' />
            <div className='flex flex-col mt-5 text-sm text-gray-500 gap-1'>
             <p>100% Original product.</p>
